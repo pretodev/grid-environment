@@ -22,10 +22,14 @@ public:
 
     void positionNeighbors();
 
+    bool isValidIndex(int index);
 private:
     int m_dimension;
     int* m_gridElements;
     int m_position;
+
+private:
+    int correctPosition(int position);
 };
 
 

@@ -62,10 +62,25 @@ void Grid::positionNeighbors()
 
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
-            std::cout << "(" << (row + i) << ", " << (col + j) << ") ";
+            std::cout << "(" << correctPosition(row + i) << ", " << correctPosition(col + j) << ") ";
         }
     }
     std::cout << std::endl;
+}
+
+int Grid::correctPosition(int position)
+{
+    if (position >= m_dimension)
+        return 0;
+    else if (position < 0)
+        return (m_dimension - 1);
+
+    return position;
+}
+
+bool Grid::isValidIndex(int index)
+{
+    return index >= 0 && index < m_dimension;
 }
 
 
