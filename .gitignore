@@ -8,3 +8,7 @@ out
 gen
 
 build
+
+*.o
+
+grid_env
